@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<div style="width: 90%; padding-left: 50px; padding-top: 50px;">
+  
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Complete</th>
+        <th scope="col">Creation Date</th>
+        <th scope="col">Last Date</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in task %}
+      <tr>
+        <th scope="row">{{item.id}}</th>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.due_date }}</td>
+        <td>{{ item.priority }}</td>
+        <td>{{ item.complete }}</td>
+        <td>{{ item.creation_date }}</td>
+        <td>{{ item.last_updated }}</td>
+        <td>
+            <div>
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+            </div>
+                
+
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+{% endblock body %}

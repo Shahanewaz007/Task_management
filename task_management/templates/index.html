@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% if request.user.is_authenticated %}
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <div class="p-3">
+        <button type="button" class="btn btn-primary">
+            <a href="{% url 'create_task' %}" style="color: aliceblue;">Create Task</a>
+        </button>
+
+        <button type="button" class="btn btn-info">
+            <a href="{% url 'task_list' %}" style="color: aliceblue;">Task List</a>
+        </button>
+
+        <button type="button" class="btn btn-success">
+            Complete Task
+        </button>
+
+        <button type="button" class="btn btn-danger">
+            Uncomplete Task
+        </button>
+      </div>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+{% else %}
+<div style="text-align: center; padding-top: 100px;">
+    <h1>Welcome To Task Management</h1>
+    <h1>To Add Task You Should Sign Up First</h1>
+  </div>
+
+{% endif %}
+{% endblock body %}

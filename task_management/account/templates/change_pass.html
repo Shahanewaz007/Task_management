@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div style="padding-left: 500px;">
+    <h1>Change Password</h1>
+    <div >
+        
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="passwordinput1">Old Password</label>
+          <br>
+          {{form.old_password}}
+          
+        </div>
+        <div class="form-group" style="padding-top: 15px;">
+            <label for="passwordinput2">New Password</label>
+            <br>
+            {{form.new_password1}}
+          </div>
+        <div class="form-group" style="padding-top: 15px;">
+          <label for="passwordinput3">Confirm Password</label>
+          <br>
+          {{form.new_password2}}
+        </div>
+        <div style="padding-top: 15px;">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+      </form>
+    </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div style="padding-left: 600px; padding-top: 30px;">
+<h1>Name : {{name}}</h1>
+<h1>Email : {{email}}</h1>
+</div>
+
+<div style="padding-left: 600px; padding-top: 50px;">
+    <button class="btn btn-danger">
+       <a href="{% url 'change_password' %}" style="color: aliceblue;">Change Password</a> 
+    </button>
+</div>
+{% endblock body %}

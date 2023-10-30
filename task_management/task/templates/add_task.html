@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<div style="width: 70%; padding-left: 400px;">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleFormControltitle1" class="form-label">Enter Title :</label>
+        {{form.title}}
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Enter Description :</label>
+        {{form.description}}
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlDate1" class="form-label">Enter Due Date :</label>
+        {{form.due_date}}
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlpriority" class="form-label">Enter Prioriy :</label>
+        {{form.priority}}
+      </div>
+      
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}
